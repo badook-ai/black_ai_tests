@@ -36,19 +36,19 @@ class BlackTests(DataTestCase):
     
         def test_portion_of_unchanged_local_tracks(self):
             merged_data = self.raw_data.get_summary('local_track_per_merge')
-            merged_data.count_ditinct. \
+            merged_data.count_ditinct \
                     .check(lambda count : count>1).assert_with_tollerance(0.25)
 
 
-        def test_portion_of_changeg_global_tracks(self):
+        def test_portion_of_changed_global_tracks(self):
             merged_data = self.raw_data.get_summary('global_track_per_merge')
-            merged_data.count_ditinct. \
+            merged_data.count_ditinct \
                     .check(lambda count : count!=1).assert_with_tollerance(0.50)
 
 
-        def test_portion_of_changeg_global_tracks(self):
+        def test_portion_of_swap_points(self):
             merged_data = self.raw_data.get_summary('merge_track_per_global')
-            merged_data.count_ditinct. \
+            merged_data.count_ditinct \
                     .check(lambda count : count==1).assert_all()
 
 
